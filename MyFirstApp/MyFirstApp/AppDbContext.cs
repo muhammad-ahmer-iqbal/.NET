@@ -12,10 +12,15 @@ namespace MyFirstApp
 
         public DbSet<School> Schools { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Customer>()
+                .HasIndex(customer => customer.Email)
+                .IsUnique();
 
             modelBuilder.Entity<Student>()
                 .HasOne(s => s.School)
