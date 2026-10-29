@@ -24,7 +24,7 @@ namespace MyFirstApp
 
             modelBuilder.Entity<Student>()
                 .HasOne(s => s.School)
-                .WithMany(s => s.Students)
+                .WithMany()
                 .HasForeignKey(s => s.SchoolId)
                 .OnDelete(DeleteBehavior.Restrict);
         }

@@ -100,7 +100,7 @@ namespace MyFirstApp.Migrations
             modelBuilder.Entity("MyFirstApp.Models.Student", b =>
                 {
                     b.HasOne("MyFirstApp.Models.School", "School")
-                        .WithMany("Students")
+                        .WithMany()
                         .HasForeignKey("SchoolId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -108,10 +108,6 @@ namespace MyFirstApp.Migrations
                     b.Navigation("School");
                 });
 
-            modelBuilder.Entity("MyFirstApp.Models.School", b =>
-                {
-                    b.Navigation("Students");
-                });
 #pragma warning restore 612, 618
         }
     }

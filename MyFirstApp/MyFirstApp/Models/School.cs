@@ -9,8 +9,5 @@ namespace MyFirstApp.Models
         [Required]
         public string Name { get; set; } = string.Empty;
         public string Domain { get; set; } = string.Empty;
-
-        public ICollection<Student> Students { get; set; }
-            = new List<Student>();
     }
 }

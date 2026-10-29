@@ -48,7 +48,7 @@ public class SchoolController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Name,Domain,Students")] School school)
+    public async Task<IActionResult> Create([Bind("Id,Name,Domain")] School school)
     {
         if (ModelState.IsValid)
         {
@@ -80,7 +80,7 @@ public class SchoolController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int? id, [Bind("Id,Name,Domain,Students")] School school)
+    public async Task<IActionResult> Edit(int? id, [Bind("Id,Name,Domain")] School school)
     {
         if (id != school.Id)
         {
